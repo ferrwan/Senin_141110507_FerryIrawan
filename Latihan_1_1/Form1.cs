@@ -21,8 +21,7 @@ namespace Latihan_1_1
         {
             this.label1.Text = this.vScrollBar1.Value.ToString();
             this.label2.Text = this.vScrollBar2.Value.ToString();
-            this.minRange.Text = (nowYear - this.vScrollBar1.Value).ToString();
-            this.maxRange.Text = (nowYear - this.vScrollBar2.Value).ToString();
+            this.dateRange.Text = (nowYear - this.vScrollBar1.Value).ToString() + " - " + (nowYear - this.vScrollBar2.Value);
             this.vScrollBar1.ValueChanged += new System.EventHandler(this.changeMin);
             this.vScrollBar2.ValueChanged += new System.EventHandler(this.changeMax);
             this.dateTimePicker1.MinDate = new DateTime(nowYear - this.vScrollBar1.Value, 1, 1);
@@ -34,7 +33,7 @@ namespace Latihan_1_1
             {
                 this.vScrollBar2.Value = this.vScrollBar1.Value;
             }
-            this.minRange.Text = (nowYear - this.vScrollBar1.Value).ToString();
+            this.dateRange.Text = (nowYear - this.vScrollBar1.Value).ToString() + " - " + (nowYear - this.vScrollBar2.Value);
             this.label1.Text = Convert.ToString(this.vScrollBar1.Value);
             this.dateTimePicker1.MinDate = new DateTime(nowYear - this.vScrollBar1.Value, 1, 1);
         }
@@ -44,7 +43,7 @@ namespace Latihan_1_1
             {
                 this.vScrollBar1.Value = this.vScrollBar2.Value;
             }
-            this.maxRange.Text = (nowYear - this.vScrollBar2.Value).ToString();
+            this.dateRange.Text = (nowYear - this.vScrollBar1.Value).ToString() + " - " + (nowYear - this.vScrollBar2.Value);
             this.label2.Text = Convert.ToString(this.vScrollBar2.Value);
             this.dateTimePicker1.MaxDate = new DateTime(nowYear - this.vScrollBar2.Value, 12, 31);
         }
