@@ -7,3 +7,6 @@
 \\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_1_1\obj\Debug\Latihan_1_1.csproj.GenerateResource.Cache
 \\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_1_1\obj\Debug\Latihan_1_1.exe
 \\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_1_1\obj\Debug\Latihan_1_1.pdb
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_1_1\bin\Debug\Latihan_1_1.exe.config
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_1_1\obj\Debug\Latihan_1_1.exe
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_1_1\obj\Debug\Latihan_1_1.pdb
