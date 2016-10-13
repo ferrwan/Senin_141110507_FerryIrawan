@@ -30,13 +30,13 @@
         {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.fontSizeComboBox = new System.Windows.Forms.ComboBox();
+            this.colorComboBox = new System.Windows.Forms.ComboBox();
             this.fontFamilyComboBox = new System.Windows.Forms.ComboBox();
             this.underlineButton = new System.Windows.Forms.Button();
             this.italicButton = new System.Windows.Forms.Button();
             this.boldButton = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.colorComboBox = new System.Windows.Forms.ComboBox();
-            this.fontSizeComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,27 @@
             this.panel1.Size = new System.Drawing.Size(593, 48);
             this.panel1.TabIndex = 1;
             // 
+            // fontSizeComboBox
+            // 
+            this.fontSizeComboBox.FormattingEnabled = true;
+            this.fontSizeComboBox.Location = new System.Drawing.Point(162, 13);
+            this.fontSizeComboBox.Name = "fontSizeComboBox";
+            this.fontSizeComboBox.Size = new System.Drawing.Size(42, 23);
+            this.fontSizeComboBox.TabIndex = 3;
+            this.fontSizeComboBox.SelectedIndexChanged += new System.EventHandler(this.fontSizeComboBox_SelectedIndexChanged);
+            this.fontSizeComboBox.TextChanged += new System.EventHandler(this.fontSizeComboBox_TextChanged);
+            // 
+            // colorComboBox
+            // 
+            this.colorComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.colorComboBox.FormattingEnabled = true;
+            this.colorComboBox.Location = new System.Drawing.Point(381, 13);
+            this.colorComboBox.Name = "colorComboBox";
+            this.colorComboBox.Size = new System.Drawing.Size(193, 22);
+            this.colorComboBox.TabIndex = 2;
+            this.colorComboBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.colorComboBox_DrawItem);
+            this.colorComboBox.SelectedIndexChanged += new System.EventHandler(this.colorComboBox_SelectedIndexChanged);
+            // 
             // fontFamilyComboBox
             // 
             this.fontFamilyComboBox.FormattingEnabled = true;
@@ -69,7 +90,7 @@
             this.fontFamilyComboBox.Name = "fontFamilyComboBox";
             this.fontFamilyComboBox.Size = new System.Drawing.Size(140, 23);
             this.fontFamilyComboBox.TabIndex = 1;
-            this.fontFamilyComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.fontFamilyComboBox.SelectedIndexChanged += new System.EventHandler(this.fontFamilyComboBox_SelectedIndexChanged);
             // 
             // underlineButton
             // 
@@ -104,27 +125,6 @@
             this.boldButton.Text = "B";
             this.boldButton.UseVisualStyleBackColor = false;
             this.boldButton.Click += new System.EventHandler(this.boldButton_Click);
-            // 
-            // colorComboBox
-            // 
-            this.colorComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.colorComboBox.FormattingEnabled = true;
-            this.colorComboBox.Location = new System.Drawing.Point(381, 13);
-            this.colorComboBox.Name = "colorComboBox";
-            this.colorComboBox.Size = new System.Drawing.Size(193, 22);
-            this.colorComboBox.TabIndex = 2;
-            this.colorComboBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.colorComboBox_DrawItem);
-            this.colorComboBox.SelectedIndexChanged += new System.EventHandler(this.colorComboBox_SelectedIndexChanged);
-            // 
-            // fontSizeComboBox
-            // 
-            this.fontSizeComboBox.FormattingEnabled = true;
-            this.fontSizeComboBox.Location = new System.Drawing.Point(162, 13);
-            this.fontSizeComboBox.Name = "fontSizeComboBox";
-            this.fontSizeComboBox.Size = new System.Drawing.Size(42, 23);
-            this.fontSizeComboBox.TabIndex = 3;
-            this.fontSizeComboBox.SelectedIndexChanged += new System.EventHandler(this.fontSizeComboBox_SelectedIndexChanged);
-            this.fontSizeComboBox.TextChanged += new System.EventHandler(this.fontSizeComboBox_TextChanged);
             // 
             // Form3_1
             // 

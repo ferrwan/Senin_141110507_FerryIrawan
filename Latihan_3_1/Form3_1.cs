@@ -39,6 +39,7 @@ namespace Latihan_3_1
 
             fontSizeComboBox.SelectedIndex = fontSizeComboBox.FindString(this.Font.Size.ToString());
             fontFamilyComboBox.SelectedIndex = fontFamilyComboBox.FindString(this.Font.FontFamily.Name);
+            colorComboBox.SelectedIndex = colorComboBox.FindString(this.ForeColor.Name);
         }
         private void richTextBox1_SelectionChanged(object sender, EventArgs e)
         {
@@ -47,6 +48,10 @@ namespace Latihan_3_1
                 boldButton.BackColor = (richTextBox1.SelectionFont.Bold == true) ? System.Drawing.SystemColors.ButtonShadow : Color.Transparent;
                 italicButton.BackColor = (richTextBox1.SelectionFont.Italic == true) ? System.Drawing.SystemColors.ButtonShadow : Color.Transparent;
                 underlineButton.BackColor = (richTextBox1.SelectionFont.Underline == true) ? System.Drawing.SystemColors.ButtonShadow : Color.Transparent;
+                int idx = fontFamilyComboBox.FindString(richTextBox1.SelectionFont.FontFamily.Name);
+                fontFamilyComboBox.SelectedIndex = (idx >=0) ? idx : fontFamilyComboBox.FindString("Times New Roman");
+                idx = colorComboBox.FindString(richTextBox1.SelectionColor.Name);
+                colorComboBox.SelectedIndex = (idx >= 0) ? idx : colorComboBox.FindString(Color.Transparent.ToString());
             }
         }
         private void changeFontByButton(string type)
@@ -70,6 +75,8 @@ namespace Latihan_3_1
                             newFontStyle |= FontStyle.Bold;
                             boldButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
                         }
+                        else
+                            boldButton.BackColor = System.Drawing.Color.Transparent;
                         break;
 
                     case "italic":
@@ -85,6 +92,8 @@ namespace Latihan_3_1
                             newFontStyle |= FontStyle.Italic;
                             italicButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
                         }
+                        else
+                            italicButton.BackColor = System.Drawing.Color.Transparent;
                         break;
 
                     case "underline":
@@ -100,6 +109,8 @@ namespace Latihan_3_1
                             newFontStyle |= FontStyle.Underline;
                             underlineButton.BackColor = System.Drawing.SystemColors.ButtonShadow;
                         }
+                        else
+                            underlineButton.BackColor = System.Drawing.Color.Transparent;
                         break;
                 }
                 richTextBox1.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, newFontStyle);
@@ -117,7 +128,7 @@ namespace Latihan_3_1
         {
             changeFontByButton("underline");
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void fontFamilyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Drawing.Font currentFont = richTextBox1.SelectionFont;
             System.Drawing.FontStyle currentStyle = richTextBox1.SelectionFont.Style;
@@ -126,15 +137,17 @@ namespace Latihan_3_1
         private void fontSizeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             System.Drawing.Font currentFont = richTextBox1.SelectionFont;
-            richTextBox1.SelectionFont = new Font(currentFont.FontFamily, fontSizeComboBox.SelectedIndex + 1);
+            System.Drawing.FontStyle currentStyle = richTextBox1.SelectionFont.Style;
+            richTextBox1.SelectionFont = new Font(currentFont.FontFamily, fontSizeComboBox.SelectedIndex + 1, currentStyle);
         }
         private void fontSizeComboBox_TextChanged(object sender, EventArgs e)
         {
             if (fontSizeComboBox.Text != "")
             {
                 System.Drawing.Font currentFont = richTextBox1.SelectionFont;
-                int size = Convert.ToInt32(fontSizeComboBox.Text);
-                richTextBox1.SelectionFont = new Font(currentFont.FontFamily, size);
+                System.Drawing.FontStyle currentStyle = richTextBox1.SelectionFont.Style;
+                float size = Convert.ToSingle(fontSizeComboBox.Text);
+                richTextBox1.SelectionFont = new Font(currentFont.FontFamily, size, currentStyle);
             }
         }
         private void colorComboBox_DrawItem(object sender, DrawItemEventArgs e)
@@ -154,8 +167,11 @@ namespace Latihan_3_1
         }
         private void colorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Color c = Color.FromName(colorComboBox.Items[colorComboBox.SelectedIndex].ToString());
-            richTextBox1.SelectionColor = c;
+            if (colorComboBox.SelectedIndex >= 0)
+            {
+                Color c = Color.FromName(colorComboBox.Items[colorComboBox.SelectedIndex].ToString());
+                richTextBox1.SelectionColor = c;
+            }
         }
     }
 }
