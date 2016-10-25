@@ -7,3 +7,4 @@
 \\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_3_1\obj\Debug\Latihan_3_1.csproj.GenerateResource.Cache
 \\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_3_1\obj\Debug\Latihan_3_1.exe
 \\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_3_1\obj\Debug\Latihan_3_1.pdb
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_3_1\bin\Debug\MaterialSkin.dll

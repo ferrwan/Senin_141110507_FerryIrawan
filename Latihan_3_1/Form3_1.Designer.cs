@@ -36,20 +36,27 @@
             this.underlineButton = new System.Windows.Forms.Button();
             this.italicButton = new System.Windows.Forms.Button();
             this.boldButton = new System.Windows.Forms.Button();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.Black;
             this.richTextBox1.Location = new System.Drawing.Point(14, 80);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(593, 324);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            this.richTextBox1.SelectionChanged += new System.EventHandler(this.richTextBox1_SelectionChanged);
+            this.richTextBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.richTextBox1_KeyDown);
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Controls.Add(this.fontSizeComboBox);
             this.panel1.Controls.Add(this.colorComboBox);
@@ -150,7 +157,6 @@
         private System.Windows.Forms.Button underlineButton;
         private System.Windows.Forms.Button italicButton;
         private System.Windows.Forms.ComboBox fontFamilyComboBox;
-        private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ComboBox fontSizeComboBox;
         private System.Windows.Forms.ComboBox colorComboBox;
     }

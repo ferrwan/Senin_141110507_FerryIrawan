@@ -1,0 +1,9 @@
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\bin\Debug\Latihan_4_1.exe.config
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\bin\Debug\Latihan_4_1.exe
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\bin\Debug\Latihan_4_1.pdb
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\obj\Debug\Latihan_4_1.csprojResolveAssemblyReference.cache
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\obj\Debug\Latihan_4_1.Form4_1.resources
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\obj\Debug\Latihan_4_1.Properties.Resources.resources
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\obj\Debug\Latihan_4_1.csproj.GenerateResource.Cache
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\obj\Debug\Latihan_4_1.exe
+\\VBOXSVR\Documents\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\Latihan_4_1\obj\Debug\Latihan_4_1.pdb
