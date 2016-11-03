@@ -1,31 +1,35 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Latihan_4_1;
+using System.Collections;
+using System.Reflection;
+using System.IO;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
-namespace Latihan_3_1
+namespace Latihan_5_1
 {
-    public partial class Form3_1 : Form
+    public partial class Form5_1 : Form
     {
         bool noRepeatSelectionChange = false;
         int fontIdx;
-        public Form3_1()
+        public Form5_1()
         {
             InitializeComponent();
         }
-        private void Form3_1_Load(object sender, EventArgs e)
+        private void Form5_1_Load(object sender, EventArgs e)
         {
             FontFamily[] fontList = FontFamily.Families;
             for (int i = 1; i <= 100; i++)
                 fontSizeComboBox.Items.Add(i);
-            foreach( FontFamily font in fontList)
+            foreach (FontFamily font in fontList)
             {
                 fontFamilyComboBox.Items.Add(font.Name);
             }
@@ -33,7 +37,7 @@ namespace Latihan_3_1
             ArrayList colorList = new ArrayList();
             Type colorType = typeof(System.Drawing.Color);
             PropertyInfo[] propInfoList = colorType.GetProperties(BindingFlags.Static | BindingFlags.DeclaredOnly | BindingFlags.Public);
-            foreach(PropertyInfo c in propInfoList)
+            foreach (PropertyInfo c in propInfoList)
             {
                 this.colorComboBox.Items.Add(c.Name);
             }
@@ -213,7 +217,7 @@ namespace Latihan_3_1
         {
             Graphics g = e.Graphics;
             Rectangle rect = e.Bounds;
-            if(e.Index >= 0)
+            if (e.Index >= 0)
             {
                 string n = ((ComboBox)sender).Items[e.Index].ToString();
                 Font f = new Font("Arial", 9, FontStyle.Regular);
@@ -231,6 +235,97 @@ namespace Latihan_3_1
                 Color c = Color.FromName(colorComboBox.Items[colorComboBox.SelectedIndex].ToString());
                 richTextBox1.SelectionColor = c;
             }
+        }
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5_1 form = new Form5_1();
+            form.Show();
+        }
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            try
+            {
+                openFile.DefaultExt = "*.rtf";
+                openFile.Filter = "RTF Files | *.rtf";
+                if (openFile.ShowDialog() == System.Windows.Forms.DialogResult.OK && openFile.FileName.Length > 0)
+                {
+                    richTextBox1.LoadFile(openFile.FileName);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            try
+            {
+                saveDialog.DefaultExt = "*.rtf";
+                saveDialog.Filter = "RTF Files (*.rtf*)|*.rtf*";
+                saveDialog.Title = "Save";
+                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK && saveDialog.FileName.Length > 0)
+                {
+                    richTextBox1.SaveFile(saveDialog.FileName);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Form5_1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Do you want to save your file?", "Save File ?", MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes)
+            {
+                saveToolStripMenuItem_Click(sender, e);
+            }
+            else if (result == DialogResult.No)
+            {}
+            else
+                e.Cancel = true;
+        }
+        void cutAction(object sender, EventArgs e)
+        {
+            richTextBox1.Cut();
+        }
+        void copyAction(object sender, EventArgs e)
+        {
+            richTextBox1.Copy();
+        }
+        void pasteAction(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText(TextDataFormat.Rtf))
+            {
+                richTextBox1.SelectedRtf = Clipboard.GetData(DataFormats.Rtf).ToString();
+            }
+        }
+        void deleteAction(object sender, EventArgs e)
+        {
+            richTextBox1.SelectedText = "";
+        }
+        private void richTextBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                rtbContextMenuStrip.Show(this, e.X, e.Y + 80);
+            }
+        }
+
+        private void editorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingForm settingForm = new SettingForm(this);
+            settingForm.StartPosition = FormStartPosition.Manual;
+            settingForm.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width / 4, Screen.PrimaryScreen.WorkingArea.Height / 4);
+            settingForm.ShowDialog();
         }
     }
 }

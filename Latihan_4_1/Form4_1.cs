@@ -129,6 +129,12 @@ namespace Latihan_4_1
                     float size = Convert.ToSingle(fontSizeComboBox.Text);
                     richTextBox1.SelectionFont = new Font(currentFont.FontFamily, size, currentStyle);
                 }
+                else if (type == "change-font-family")
+                {
+                    System.Drawing.Font currentFont = richTextBox1.SelectionFont;
+                    System.Drawing.FontStyle currentStyle = richTextBox1.SelectionFont.Style;
+                    richTextBox1.SelectionFont = new Font(fontFamilyComboBox.SelectedItem.ToString(), currentFont.Size, currentStyle);
+                }
             }
             richTextBox1.Select(start, length);
             if (type == "rtb-select-change")
@@ -141,7 +147,12 @@ namespace Latihan_4_1
                 {
                     fontIdx = fontFamilyComboBox.FindString(richTextBox1.SelectionFont.FontFamily.Name);
                 }
-                fontFamilyComboBox.SelectedIndex = (fontIdx >= 0) ? fontIdx : fontFamilyComboBox.FindString("Times New Roman");
+                if (fontIdx >= 0)
+                {
+                    fontFamilyComboBox.SelectedIndex = fontIdx;
+                    System.Drawing.Font currentFont = richTextBox1.SelectionFont;
+                    fontSizeComboBox.SelectedIndex = fontSizeComboBox.FindString(currentFont.Size.ToString());
+                }
                 int idx = colorComboBox.FindString(richTextBox1.SelectionColor.Name);
                 colorComboBox.SelectedIndex = (idx >= 0) ? idx : colorComboBox.FindString(Color.Transparent.ToString());
             }
@@ -188,12 +199,7 @@ namespace Latihan_4_1
         }
         private void fontFamilyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (fontIdx >= 0)
-            {
-                System.Drawing.Font currentFont = richTextBox1.SelectionFont;
-                System.Drawing.FontStyle currentStyle = richTextBox1.SelectionFont.Style;
-                richTextBox1.SelectionFont = new Font(fontFamilyComboBox.SelectedItem.ToString(), currentFont.Size, currentStyle);
-            }
+            getFontByChar("change-font-family", "");
         }
         private void fontSizeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
