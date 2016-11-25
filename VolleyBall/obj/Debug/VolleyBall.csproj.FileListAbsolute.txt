@@ -1,0 +1,6 @@
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\VolleyBall\bin\Debug\VolleyBall.exe.config
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\VolleyBall\bin\Debug\VolleyBall.exe
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\VolleyBall\bin\Debug\VolleyBall.pdb
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\VolleyBall\obj\Debug\VolleyBall.exe
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\VolleyBall\obj\Debug\VolleyBall.pdb
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\VolleyBall\obj\Debug\VolleyBall.csprojResolveAssemblyReference.cache

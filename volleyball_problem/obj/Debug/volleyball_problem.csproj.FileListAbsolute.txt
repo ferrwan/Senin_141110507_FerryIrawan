@@ -1,0 +1,10 @@
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\bin\Debug\volleyball_problem.exe.config
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\bin\Debug\volleyball_problem.exe
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\bin\Debug\volleyball_problem.pdb
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\bin\Debug\MaterialSkin.dll
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\obj\Debug\volleyball_problem.csprojResolveAssemblyReference.cache
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\obj\Debug\volleyball_problem.Form1.resources
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\obj\Debug\volleyball_problem.Properties.Resources.resources
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\obj\Debug\volleyball_problem.csproj.GenerateResource.Cache
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\obj\Debug\volleyball_problem.exe
+Z:\Core Documents\TI\Term V\Pemograman Framework NET Lanjutan\Senin_141110507_FerryIrawan\volleyball_problem\obj\Debug\volleyball_problem.pdb
