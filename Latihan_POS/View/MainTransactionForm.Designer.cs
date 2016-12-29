@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.transactionMenuTabController = new MaterialSkin.Controls.MaterialTabControl();
             this.listTransactionTab = new System.Windows.Forms.TabPage();
+            this.selectedTransactionLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.dgvListSelectedTransaction = new System.Windows.Forms.DataGridView();
+            this.dgvListTransaction = new System.Windows.Forms.DataGridView();
+            this.saleRadioBtn = new MaterialSkin.Controls.MaterialRadioButton();
+            this.purchaseRadioBtn = new MaterialSkin.Controls.MaterialRadioButton();
             this.purchaseTab = new System.Windows.Forms.TabPage();
+            this.purchaseTotalPriceLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.purchaseAddButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.purchaseProductBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.supplierBrowseBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -44,7 +51,7 @@
             this.purchaseProductPriceTextbox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.purchaseProductTextbox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.supplierTextbox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.purchaseCodeTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.purchaseCodeTextbox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
@@ -52,6 +59,8 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.saleTab = new System.Windows.Forms.TabPage();
+            this.saleTotalPriceLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.saleAddBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.purchaseProductBrowseBtn = new MaterialSkin.Controls.MaterialRaisedButton();
             this.saleCustomerBrowseBtn = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -69,23 +78,14 @@
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.saleTotalPriceLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.purchaseTotalPriceLabel = new System.Windows.Forms.Label();
-            this.purchaseRadioBtn = new MaterialSkin.Controls.MaterialRadioButton();
-            this.saleRadioBtn = new MaterialSkin.Controls.MaterialRadioButton();
-            this.dgvListTransaction = new System.Windows.Forms.DataGridView();
-            this.dgvListSelectedTransaction = new System.Windows.Forms.DataGridView();
-            this.selectedTransactionLabel = new MaterialSkin.Controls.MaterialLabel();
             this.transactionMenuTabController.SuspendLayout();
             this.listTransactionTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListSelectedTransaction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListTransaction)).BeginInit();
             this.purchaseTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseItems)).BeginInit();
             this.saleTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListTransaction)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListSelectedTransaction)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabSelector1
@@ -132,6 +132,88 @@
             this.listTransactionTab.Text = "List Transaction";
             this.listTransactionTab.UseVisualStyleBackColor = true;
             // 
+            // selectedTransactionLabel
+            // 
+            this.selectedTransactionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.selectedTransactionLabel.AutoSize = true;
+            this.selectedTransactionLabel.Depth = 0;
+            this.selectedTransactionLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.selectedTransactionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.selectedTransactionLabel.Location = new System.Drawing.Point(21, 232);
+            this.selectedTransactionLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.selectedTransactionLabel.Name = "selectedTransactionLabel";
+            this.selectedTransactionLabel.Size = new System.Drawing.Size(120, 19);
+            this.selectedTransactionLabel.TabIndex = 2;
+            this.selectedTransactionLabel.Text = "No List Selected";
+            // 
+            // dgvListSelectedTransaction
+            // 
+            this.dgvListSelectedTransaction.AllowUserToAddRows = false;
+            this.dgvListSelectedTransaction.AllowUserToDeleteRows = false;
+            this.dgvListSelectedTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListSelectedTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListSelectedTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListSelectedTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListSelectedTransaction.Location = new System.Drawing.Point(25, 254);
+            this.dgvListSelectedTransaction.Name = "dgvListSelectedTransaction";
+            this.dgvListSelectedTransaction.ReadOnly = true;
+            this.dgvListSelectedTransaction.Size = new System.Drawing.Size(645, 161);
+            this.dgvListSelectedTransaction.TabIndex = 1;
+            // 
+            // dgvListTransaction
+            // 
+            this.dgvListTransaction.AllowUserToAddRows = false;
+            this.dgvListTransaction.AllowUserToDeleteRows = false;
+            this.dgvListTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvListTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListTransaction.Location = new System.Drawing.Point(25, 61);
+            this.dgvListTransaction.Name = "dgvListTransaction";
+            this.dgvListTransaction.ReadOnly = true;
+            this.dgvListTransaction.Size = new System.Drawing.Size(645, 152);
+            this.dgvListTransaction.TabIndex = 1;
+            this.dgvListTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListTransaction_CellContentClick);
+            // 
+            // saleRadioBtn
+            // 
+            this.saleRadioBtn.AutoSize = true;
+            this.saleRadioBtn.Depth = 0;
+            this.saleRadioBtn.Font = new System.Drawing.Font("Roboto", 10F);
+            this.saleRadioBtn.Location = new System.Drawing.Point(172, 16);
+            this.saleRadioBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.saleRadioBtn.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.saleRadioBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.saleRadioBtn.Name = "saleRadioBtn";
+            this.saleRadioBtn.Ripple = true;
+            this.saleRadioBtn.Size = new System.Drawing.Size(56, 30);
+            this.saleRadioBtn.TabIndex = 0;
+            this.saleRadioBtn.Text = "Sale";
+            this.saleRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // purchaseRadioBtn
+            // 
+            this.purchaseRadioBtn.AutoSize = true;
+            this.purchaseRadioBtn.Checked = true;
+            this.purchaseRadioBtn.Depth = 0;
+            this.purchaseRadioBtn.Font = new System.Drawing.Font("Roboto", 10F);
+            this.purchaseRadioBtn.Location = new System.Drawing.Point(25, 16);
+            this.purchaseRadioBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.purchaseRadioBtn.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.purchaseRadioBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            this.purchaseRadioBtn.Name = "purchaseRadioBtn";
+            this.purchaseRadioBtn.Ripple = true;
+            this.purchaseRadioBtn.Size = new System.Drawing.Size(87, 30);
+            this.purchaseRadioBtn.TabIndex = 0;
+            this.purchaseRadioBtn.TabStop = true;
+            this.purchaseRadioBtn.Text = "Purchase";
+            this.purchaseRadioBtn.UseVisualStyleBackColor = true;
+            this.purchaseRadioBtn.CheckedChanged += new System.EventHandler(this.purchaseRadioBtn_CheckedChanged);
+            // 
             // purchaseTab
             // 
             this.purchaseTab.Controls.Add(this.purchaseTotalPriceLabel);
@@ -146,7 +228,7 @@
             this.purchaseTab.Controls.Add(this.purchaseProductPriceTextbox);
             this.purchaseTab.Controls.Add(this.purchaseProductTextbox);
             this.purchaseTab.Controls.Add(this.supplierTextbox);
-            this.purchaseTab.Controls.Add(this.purchaseCodeTextBox);
+            this.purchaseTab.Controls.Add(this.purchaseCodeTextbox);
             this.purchaseTab.Controls.Add(this.materialLabel6);
             this.purchaseTab.Controls.Add(this.materialLabel5);
             this.purchaseTab.Controls.Add(this.materialLabel4);
@@ -160,6 +242,28 @@
             this.purchaseTab.TabIndex = 1;
             this.purchaseTab.Text = "Purchase";
             this.purchaseTab.UseVisualStyleBackColor = true;
+            // 
+            // purchaseTotalPriceLabel
+            // 
+            this.purchaseTotalPriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.purchaseTotalPriceLabel.AutoSize = true;
+            this.purchaseTotalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchaseTotalPriceLabel.Location = new System.Drawing.Point(438, 398);
+            this.purchaseTotalPriceLabel.Name = "purchaseTotalPriceLabel";
+            this.purchaseTotalPriceLabel.Size = new System.Drawing.Size(40, 18);
+            this.purchaseTotalPriceLabel.TabIndex = 27;
+            this.purchaseTotalPriceLabel.Text = "0.00";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(343, 398);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 18);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Total Price";
             // 
             // purchaseAddButton
             // 
@@ -226,8 +330,8 @@
             this.dgvPurchaseItems.Location = new System.Drawing.Point(6, 236);
             this.dgvPurchaseItems.Name = "dgvPurchaseItems";
             this.dgvPurchaseItems.ReadOnly = true;
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(8, 5, 8, 5);
-            this.dgvPurchaseItems.RowsDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(8, 5, 8, 5);
+            this.dgvPurchaseItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPurchaseItems.Size = new System.Drawing.Size(686, 156);
             this.dgvPurchaseItems.TabIndex = 6;
             // 
@@ -264,6 +368,7 @@
             this.purchaseQuantityTextbox.TabIndex = 5;
             this.purchaseQuantityTextbox.Text = "0";
             this.purchaseQuantityTextbox.UseSystemPasswordChar = false;
+            this.purchaseQuantityTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.purchaseQuantityTextbox_KeyPress);
             this.purchaseQuantityTextbox.TextChanged += new System.EventHandler(this.purchaseQuantityTextBox_TextChanged);
             // 
             // purchaseProductPriceTextbox
@@ -280,6 +385,7 @@
             this.purchaseProductPriceTextbox.Size = new System.Drawing.Size(236, 23);
             this.purchaseProductPriceTextbox.TabIndex = 5;
             this.purchaseProductPriceTextbox.UseSystemPasswordChar = false;
+            this.purchaseProductPriceTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.purchaseProductPriceTextbox_KeyPress);
             this.purchaseProductPriceTextbox.TextChanged += new System.EventHandler(this.purchaseQuantityTextBox_TextChanged);
             // 
             // purchaseProductTextbox
@@ -316,20 +422,20 @@
             this.supplierTextbox.Text = "Click browse to select a supplier";
             this.supplierTextbox.UseSystemPasswordChar = false;
             // 
-            // purchaseCodeTextBox
+            // purchaseCodeTextbox
             // 
-            this.purchaseCodeTextBox.Depth = 0;
-            this.purchaseCodeTextBox.Hint = "";
-            this.purchaseCodeTextBox.Location = new System.Drawing.Point(186, 19);
-            this.purchaseCodeTextBox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.purchaseCodeTextBox.Name = "purchaseCodeTextBox";
-            this.purchaseCodeTextBox.PasswordChar = '\0';
-            this.purchaseCodeTextBox.SelectedText = "";
-            this.purchaseCodeTextBox.SelectionLength = 0;
-            this.purchaseCodeTextBox.SelectionStart = 0;
-            this.purchaseCodeTextBox.Size = new System.Drawing.Size(236, 23);
-            this.purchaseCodeTextBox.TabIndex = 5;
-            this.purchaseCodeTextBox.UseSystemPasswordChar = false;
+            this.purchaseCodeTextbox.Depth = 0;
+            this.purchaseCodeTextbox.Hint = "";
+            this.purchaseCodeTextbox.Location = new System.Drawing.Point(186, 19);
+            this.purchaseCodeTextbox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.purchaseCodeTextbox.Name = "purchaseCodeTextbox";
+            this.purchaseCodeTextbox.PasswordChar = '\0';
+            this.purchaseCodeTextbox.SelectedText = "";
+            this.purchaseCodeTextbox.SelectionLength = 0;
+            this.purchaseCodeTextbox.SelectionStart = 0;
+            this.purchaseCodeTextbox.Size = new System.Drawing.Size(236, 23);
+            this.purchaseCodeTextbox.TabIndex = 5;
+            this.purchaseCodeTextbox.UseSystemPasswordChar = false;
             // 
             // materialLabel6
             // 
@@ -437,6 +543,28 @@
             this.saleTab.Text = "Sale";
             this.saleTab.UseVisualStyleBackColor = true;
             // 
+            // saleTotalPriceLabel
+            // 
+            this.saleTotalPriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saleTotalPriceLabel.AutoSize = true;
+            this.saleTotalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saleTotalPriceLabel.Location = new System.Drawing.Point(453, 394);
+            this.saleTotalPriceLabel.Name = "saleTotalPriceLabel";
+            this.saleTotalPriceLabel.Size = new System.Drawing.Size(40, 18);
+            this.saleTotalPriceLabel.TabIndex = 26;
+            this.saleTotalPriceLabel.Text = "0.00";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(355, 394);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 18);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Total Price";
+            // 
             // saleAddBtn
             // 
             this.saleAddBtn.Depth = 0;
@@ -502,8 +630,8 @@
             this.dgvSaleItems.Location = new System.Drawing.Point(6, 236);
             this.dgvSaleItems.Name = "dgvSaleItems";
             this.dgvSaleItems.ReadOnly = true;
-            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(8, 5, 8, 5);
-            this.dgvSaleItems.RowsDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(8, 5, 8, 5);
+            this.dgvSaleItems.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSaleItems.Size = new System.Drawing.Size(686, 155);
             this.dgvSaleItems.TabIndex = 20;
             // 
@@ -540,6 +668,7 @@
             this.saleQuantityTextbox.TabIndex = 15;
             this.saleQuantityTextbox.Text = "0";
             this.saleQuantityTextbox.UseSystemPasswordChar = false;
+            this.saleQuantityTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.purchaseQuantityTextbox_KeyPress);
             this.saleQuantityTextbox.TextChanged += new System.EventHandler(this.saleQuantityTextbox_TextChanged);
             // 
             // saleProductPriceTextbox
@@ -556,6 +685,7 @@
             this.saleProductPriceTextbox.Size = new System.Drawing.Size(240, 23);
             this.saleProductPriceTextbox.TabIndex = 16;
             this.saleProductPriceTextbox.UseSystemPasswordChar = false;
+            this.saleProductPriceTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.purchaseProductPriceTextbox_KeyPress);
             this.saleProductPriceTextbox.TextChanged += new System.EventHandler(this.saleQuantityTextbox_TextChanged);
             // 
             // saleProductTextbox
@@ -685,132 +815,6 @@
             this.materialLabel12.TabIndex = 13;
             this.materialLabel12.Text = "Code";
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(355, 394);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 18);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Total Price";
-            // 
-            // saleTotalPriceLabel
-            // 
-            this.saleTotalPriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saleTotalPriceLabel.AutoSize = true;
-            this.saleTotalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saleTotalPriceLabel.Location = new System.Drawing.Point(453, 394);
-            this.saleTotalPriceLabel.Name = "saleTotalPriceLabel";
-            this.saleTotalPriceLabel.Size = new System.Drawing.Size(40, 18);
-            this.saleTotalPriceLabel.TabIndex = 26;
-            this.saleTotalPriceLabel.Text = "0.00";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(343, 398);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 18);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Total Price";
-            // 
-            // purchaseTotalPriceLabel
-            // 
-            this.purchaseTotalPriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.purchaseTotalPriceLabel.AutoSize = true;
-            this.purchaseTotalPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purchaseTotalPriceLabel.Location = new System.Drawing.Point(438, 398);
-            this.purchaseTotalPriceLabel.Name = "purchaseTotalPriceLabel";
-            this.purchaseTotalPriceLabel.Size = new System.Drawing.Size(40, 18);
-            this.purchaseTotalPriceLabel.TabIndex = 27;
-            this.purchaseTotalPriceLabel.Text = "0.00";
-            // 
-            // purchaseRadioBtn
-            // 
-            this.purchaseRadioBtn.AutoSize = true;
-            this.purchaseRadioBtn.Checked = true;
-            this.purchaseRadioBtn.Depth = 0;
-            this.purchaseRadioBtn.Font = new System.Drawing.Font("Roboto", 10F);
-            this.purchaseRadioBtn.Location = new System.Drawing.Point(25, 16);
-            this.purchaseRadioBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.purchaseRadioBtn.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.purchaseRadioBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.purchaseRadioBtn.Name = "purchaseRadioBtn";
-            this.purchaseRadioBtn.Ripple = true;
-            this.purchaseRadioBtn.Size = new System.Drawing.Size(87, 30);
-            this.purchaseRadioBtn.TabIndex = 0;
-            this.purchaseRadioBtn.TabStop = true;
-            this.purchaseRadioBtn.Text = "Purchase";
-            this.purchaseRadioBtn.UseVisualStyleBackColor = true;
-            this.purchaseRadioBtn.CheckedChanged += new System.EventHandler(this.purchaseRadioBtn_CheckedChanged);
-            // 
-            // saleRadioBtn
-            // 
-            this.saleRadioBtn.AutoSize = true;
-            this.saleRadioBtn.Depth = 0;
-            this.saleRadioBtn.Font = new System.Drawing.Font("Roboto", 10F);
-            this.saleRadioBtn.Location = new System.Drawing.Point(172, 16);
-            this.saleRadioBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.saleRadioBtn.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.saleRadioBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            this.saleRadioBtn.Name = "saleRadioBtn";
-            this.saleRadioBtn.Ripple = true;
-            this.saleRadioBtn.Size = new System.Drawing.Size(56, 30);
-            this.saleRadioBtn.TabIndex = 0;
-            this.saleRadioBtn.Text = "Sale";
-            this.saleRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // dgvListTransaction
-            // 
-            this.dgvListTransaction.AllowUserToAddRows = false;
-            this.dgvListTransaction.AllowUserToDeleteRows = false;
-            this.dgvListTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvListTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListTransaction.Location = new System.Drawing.Point(25, 61);
-            this.dgvListTransaction.Name = "dgvListTransaction";
-            this.dgvListTransaction.ReadOnly = true;
-            this.dgvListTransaction.Size = new System.Drawing.Size(645, 152);
-            this.dgvListTransaction.TabIndex = 1;
-            this.dgvListTransaction.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListTransaction_CellContentClick);
-            // 
-            // dgvListSelectedTransaction
-            // 
-            this.dgvListSelectedTransaction.AllowUserToAddRows = false;
-            this.dgvListSelectedTransaction.AllowUserToDeleteRows = false;
-            this.dgvListSelectedTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvListSelectedTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListSelectedTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListSelectedTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListSelectedTransaction.Location = new System.Drawing.Point(25, 254);
-            this.dgvListSelectedTransaction.Name = "dgvListSelectedTransaction";
-            this.dgvListSelectedTransaction.ReadOnly = true;
-            this.dgvListSelectedTransaction.Size = new System.Drawing.Size(645, 161);
-            this.dgvListSelectedTransaction.TabIndex = 1;
-            // 
-            // selectedTransactionLabel
-            // 
-            this.selectedTransactionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.selectedTransactionLabel.AutoSize = true;
-            this.selectedTransactionLabel.Depth = 0;
-            this.selectedTransactionLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.selectedTransactionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.selectedTransactionLabel.Location = new System.Drawing.Point(21, 232);
-            this.selectedTransactionLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.selectedTransactionLabel.Name = "selectedTransactionLabel";
-            this.selectedTransactionLabel.Size = new System.Drawing.Size(116, 19);
-            this.selectedTransactionLabel.TabIndex = 2;
-            this.selectedTransactionLabel.Text = "materialLabel13";
-            // 
             // MainTransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,14 +829,14 @@
             this.transactionMenuTabController.ResumeLayout(false);
             this.listTransactionTab.ResumeLayout(false);
             this.listTransactionTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListSelectedTransaction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListTransaction)).EndInit();
             this.purchaseTab.ResumeLayout(false);
             this.purchaseTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseItems)).EndInit();
             this.saleTab.ResumeLayout(false);
             this.saleTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListTransaction)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListSelectedTransaction)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -848,7 +852,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField purchaseCodeTextBox;
+        private MaterialSkin.Controls.MaterialSingleLineTextField purchaseCodeTextbox;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialSingleLineTextField purchaseSubtotalPriceTextBox;

@@ -136,9 +136,9 @@
             this.materialLabel1.Location = new System.Drawing.Point(18, 14);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(63, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(61, 19);
             this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "Supplier";
+            this.materialLabel1.Text = "Product";
             // 
             // listProductBtn
             // 
@@ -239,9 +239,9 @@
             this.materialLabel3.Location = new System.Drawing.Point(20, 14);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(61, 19);
+            this.materialLabel3.Size = new System.Drawing.Size(63, 19);
             this.materialLabel3.TabIndex = 5;
-            this.materialLabel3.Text = "Product";
+            this.materialLabel3.Text = "Supplier";
             // 
             // listSupplierBtn
             // 
@@ -307,7 +307,7 @@
             this.posMenuPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.posMenuPanel.Controls.Add(this.registerMenuBtn);
             this.posMenuPanel.Controls.Add(this.transactionMenuBtn);
-            this.posMenuPanel.Location = new System.Drawing.Point(1, 63);
+            this.posMenuPanel.Location = new System.Drawing.Point(1, 98);
             this.posMenuPanel.Name = "posMenuPanel";
             this.posMenuPanel.Size = new System.Drawing.Size(676, 100);
             this.posMenuPanel.TabIndex = 3;

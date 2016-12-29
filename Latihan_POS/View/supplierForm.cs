@@ -63,7 +63,7 @@ namespace Latihan_POS.View
                     newSupplier.setId(Convert.ToInt32(idSupplierValue.Text));
                     newSupplier.Update();
                 }
-                MessageBox.Show(String.Concat("Customer with code ", newSupplier.getEmail(), " has been ", sqlAction == "post" ? "added" : "updated", " successfully "));
+                MessageBox.Show(String.Concat("Supplier with code ", newSupplier.getEmail(), " has been ", sqlAction == "post" ? "added" : "updated", " successfully "));
 
                 foreach (TextBox tb in this.Controls.OfType<TextBox>())
                 {

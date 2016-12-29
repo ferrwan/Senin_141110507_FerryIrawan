@@ -235,7 +235,7 @@
             this.idSupplierValue.Text = "label1";
             this.idSupplierValue.Visible = false;
             // 
-            // FormSupplier
+            // SupplierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,8 +254,8 @@
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Name = "FormSupplier";
-            this.Text = "FormSupplier";
+            this.Name = "SupplierForm";
+            this.Text = "Form Supplier";
             this.ResumeLayout(false);
             this.PerformLayout();
 

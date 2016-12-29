@@ -27,7 +27,7 @@ namespace Latihan_POS.View
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Red600, Primary.BlueGrey900, Primary.Green600, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Red700, Primary.Red900, Primary.Green600, Accent.Red100, TextShade.WHITE);
         }
 
         private void MainTransactionForm_Load(object sender, EventArgs e)
@@ -166,7 +166,7 @@ namespace Latihan_POS.View
             {
                 clsSupplier supplier = clsSupplier.SelectById(Convert.ToInt32(datas["supplier_id"]));
                 supplierId = supplier.getId();
-                saleCodeTextbox.Text = datas["code"];
+                purchaseCodeTextbox.Text = datas["code"];
                 supplierTextbox.Text = supplier.getName();
                 DataTable dt = clsPurchaseDetail.SelectByPurchaseId(Convert.ToInt32(datas["id"]));
                 dgvPurchaseItems.DataSource = dt;
@@ -194,11 +194,35 @@ namespace Latihan_POS.View
 
         private void saleQuantityTextbox_TextChanged(object sender, EventArgs e)
         {
+            if (saleProductPriceTextbox.TextLength <= 0)
+                saleProductPriceTextbox.Text = "0";
+            else if (saleQuantityTextbox.TextLength <= 0)
+                saleQuantityTextbox.Text = "0";
             saleSubTotalTextBox.Text = (Convert.ToInt32(saleQuantityTextbox.Text) * Convert.ToDecimal(saleProductPriceTextbox.Text)).ToString();
+        }
+
+        private void purchaseProductPriceTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void purchaseQuantityTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void purchaseQuantityTextBox_TextChanged(object sender, EventArgs e)
         {
+            if (purchaseProductPriceTextbox.TextLength <= 0)
+                purchaseProductPriceTextbox.Text = "0";
+            else if (purchaseQuantityTextbox.TextLength <= 0)
+                purchaseQuantityTextbox.Text = "0";
             purchaseSubtotalPriceTextBox.Text = (Convert.ToInt32(purchaseQuantityTextbox.Text) * Convert.ToDecimal(purchaseProductPriceTextbox.Text)).ToString();
         }
 
@@ -244,7 +268,7 @@ namespace Latihan_POS.View
                 }
                 else if(quantity > product.getInitialAmount())
                 {
-                    MessageBox.Show("Can't afford the quantity of the product");
+                    MessageBox.Show(string.Format("Product in Stock: {0}", product.getInitialAmount()), "Not Enought Stock");
                 }
                 else
                 {
@@ -256,7 +280,7 @@ namespace Latihan_POS.View
                         saleDetailNew.Insert();
                         product.setInitialAmount(product.getInitialAmount() - quantity);
                         product.Update();
-                        MessageBox.Show(String.Concat("Product with code ", saleDetailNew.getProduct().getCode(), " has been successfully added in sale with code ", sale.getCode()));
+                        MessageBox.Show(String.Concat("Product with code ", saleDetailNew.getProduct().getCode(), " has been successfully added in Sale with code ", sale.getCode()));
                     }
                     catch(Exception err)
                     {
@@ -276,7 +300,7 @@ namespace Latihan_POS.View
                 }
                 else if(quantity > product.getInitialAmount() + lastQuantity)
                 {
-                    MessageBox.Show("Can't afford the quantity of the product");
+                    MessageBox.Show(string.Format("Product in Stock: {0}", product.getInitialAmount() + lastQuantity), "Not Enough Stock !");
                 }
                 else
                 {
@@ -285,7 +309,7 @@ namespace Latihan_POS.View
                         saleDetail.Update();
                         product.setInitialAmount(product.getInitialAmount() - quantity + lastQuantity);
                         product.Update();
-                        MessageBox.Show(String.Concat("Product with code ", saleDetail.getProduct().getCode(), " has been successfully added in sale with code ", sale.getCode()));
+                        MessageBox.Show(String.Concat("Product with code ", saleDetail.getProduct().getCode(), " has been successfully updated in Sale with code ", sale.getCode()));
                     }
                     catch(Exception err)
                     {
@@ -316,17 +340,17 @@ namespace Latihan_POS.View
                 }
             }
 
-            clsPurchase purchase = clsPurchase.SelectByCode(purchaseCodeTextBox.Text),
+            clsPurchase purchase = clsPurchase.SelectByCode(purchaseCodeTextbox.Text),
                     newPurchase = new clsPurchase();
 
             if (purchase == null)
             {
                 newPurchase.setSupplier(clsSupplier.SelectById(supplierId));
-                newPurchase.setCode(purchaseCodeTextBox.Text);
+                newPurchase.setCode(purchaseCodeTextbox.Text);
                 try
                 {
                     newPurchase.Insert();
-                    purchase = clsPurchase.SelectByCode(purchaseCodeTextBox.Text);
+                    purchase = clsPurchase.SelectByCode(purchaseCodeTextbox.Text);
                 }
                 catch (Exception err)
                 {
@@ -356,7 +380,7 @@ namespace Latihan_POS.View
                         product.setInitialAmount(product.getInitialAmount() + quantity);
                         product.setHppPrice(purchaseDetailNew.getProductPrice());
                         product.Update();
-                        MessageBox.Show(String.Concat("Product with code ", purchaseDetailNew.getProduct().getCode(), " has been successfully added in purchase with code ", purchase.getCode()));
+                        MessageBox.Show(String.Concat("Product with code ", purchaseDetailNew.getProduct().getCode(), " has been successfully added in Purchase with code ", purchase.getCode()));
                     }
                     catch (Exception err)
                     {
@@ -382,7 +406,7 @@ namespace Latihan_POS.View
                         product.setInitialAmount(product.getInitialAmount() + quantity - lastQuantity);
                         product.setHppPrice(purchaseDetail.getProductPrice());
                         product.Update();
-                        MessageBox.Show(String.Concat("Product with code ", purchaseDetail.getProduct().getCode(), " has been successfully added in purchase with code ", purchase.getCode()));
+                        MessageBox.Show(String.Concat("Product with code ", purchaseDetail.getProduct().getCode(), " has been successfully updated in Purchase with code ", purchase.getCode()));
                     }
                     catch (Exception err)
                     {
